@@ -22,6 +22,8 @@ int main(int argc, char ** argv)
 		conv(argv[1])%conv(argv[2]));
 	printf("Prod = %d\n",
 		conv(argv[1])*conv(argv[2]));
+	printf("Quo = %d\n",
+		conv(argv[1])/conv(argv[2]));
 	}
 	else
 		printf("Falta argurmentos!\n");
