@@ -9,7 +9,7 @@ int main()
     int i;
     char str[N], msg[2*N];
 
-    print("Entre com uma frase:\n");
+    printf("Entre com uma frase:\n");
     fgets(str,N,stdin); str[strlen(str)-1]='\0';
     for(i=0;i<N;i++)
         str[i]=toupper(str[i]);
@@ -20,12 +20,12 @@ int main()
         printf("Bom dia pr voce tambem!");
     else
         if(!strncmp(str, "TCHAU", 5))
-            printf("Sando? Que pena...");
+            printf("Saindo? Que pena...");
 
         else{
-            strcopy(msg, "Voce quis dizer: ");
+            strcpy(msg, "Voce quis dizer: ");
             strcat(msg, str);
-            srtcat(msg, "?");
+            strcat(msg, "?");
         }
 
         printf("%s\n",msg);

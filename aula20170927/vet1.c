@@ -9,7 +9,7 @@ int main()
    srand(time(0));
 
    int max;
-   int numeros[1000], i;
+   int numeros[N], i;
    float media=0.f;
 
 
@@ -24,7 +24,7 @@ int main()
 
     media/=N;
 
-    printf("%f", media);
+    printf("A media dos %d numeros: %f\n",N, media);
 
-    return EXIT_SUCCESS;
+    return 0;
 }
