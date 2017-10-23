@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int eprimo(unsigned int numero) {
+int eprimo(unsigned int numero)
+{
 	unsigned int i;
 	int verifica = 1;
 	for(i = 2; i <= numero/2; i++) // comecou do 2, entendeu pq?
@@ -22,7 +23,8 @@ int mostra_soma_primos(unsigned int numero) {
 	return possibilidades;
 }
 
-int main() {
+int main()
+ {
     unsigned int numero, possibilidades;
     printf("Entre com um numero: ");
     scanf("%u", &numero);
@@ -36,4 +38,4 @@ int main() {
 			printf("Não e primo nem expresso por soma de primos.\n");
 	}
     return EXIT_SUCCESS;
-}
+}i

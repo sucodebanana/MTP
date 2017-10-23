@@ -5,7 +5,8 @@
 
 /* cifra ROT13, um exemplo de uma cifra de César */
 
-void criptografa(char *frase) {
+void criptografa(char *frase)
+{
 	int i = 0;
 	while(frase[i]) {
 		if(isalpha(frase[i])) {

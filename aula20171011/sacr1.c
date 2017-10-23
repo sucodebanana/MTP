@@ -2,7 +2,8 @@
 #include <stdlib.h>
 #include <time.h>
 
-int dado() {
+int dado()
+{
 	return rand()%6 + 1;
 }
 

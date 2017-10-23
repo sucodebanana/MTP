@@ -5,7 +5,8 @@
 #include <ctype.h>
 #define N 256
 
-void fala_computador() {
+void fala_computador()
+{
     int idfala = rand()%9; // 0 a 8
     switch(idfala) {
 	case 0: printf("Tudo bem?\n"); break;
@@ -22,8 +23,8 @@ void fala_computador() {
 
 int main()
 {
-    srand(time(0));
-        int i;
+
+    int i;
 
     char str[N];
     printf("Vamos conversar? Sobre o que quer falar?\n");
