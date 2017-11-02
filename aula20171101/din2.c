@@ -2,57 +2,55 @@
 #include<stdlib.h>
 #include<math.h>
 
-void imprime(int ord, float *mat[ord][ord])
+void imprimir(float **mat, unsigned int ord)
 {
-    int i, j;
-    for(i=0;i<ord;i++)
-    {
-        for(j=0;j<ord;j++)
-            printf("%f ",mat[i][j]);
+	int i, j;
 
-        printf("\n");
-    }
-
+	printf("\n\nMatriz de ordem %d:\n\n", ord);
+	for(i = 0; i < ord; i++)
+		for(j = 0; j < ord; j++)
+			printf("%g%c", mat[i][j], (j == ord-1)? '\n':'\t');
 }
 
-void transposta(int ord, float *mat[ord][ord])
+void transposta(float **mat, unsigned int ord)
 {
-    int i, j;
-    for(i=0;i<ord;i++)
-    {
-        for(j=0;j<ord;j++)
-            printf("%f ",mat[j][i]);
+	int i, j;
 
-        printf("\n");
-    }
-
+	printf("\n\nMatriz transposta de ordem %d:\n\n", ord);
+	for(i = 0; i < ord; i++)
+		for(j = 0; j < ord; j++)
+			printf("%g%c", mat[j][i], (j == ord-1)? '\n':'\t');
 }
 
+void preenche(float *elemento)
+{
+	scanf("%f", elemento);
+}
 
 int main()
 {
-    int ord,i,j;
-    float *mat[ord][ord];
+	int ord,i,j;
+	float **mat;
 
+	printf("Qual a ordem da matriz desejada?\n\n");
+	scanf("%d",&ord);getchar();
+	printf("\n\nElementos da matriz:\n\n");
 
-    printf("Qual a ordem da matriz desejada?\n\n");
-    scanf("%d",&ord);
+	mat= calloc(ord,sizeof(float*));
 
-    mat[ord][ord]= (float*)calloc(ord,sizeof(float));
+	for(i=0;i<ord;i++)
+	{
+		mat[i]= calloc(ord,sizeof(float));
+		for(j=0;j<ord;j++)
+		{
+			printf("M[%d][%d]: ",i+1,j+1);
+			preenche(&mat[i][j]);
+		}
+	}
 
-    for(i=0;i<ord;i++)
-    {
-        for(j=0;j<ord;j++)
-            scanf("%f ",mat[i][j]);
-    }
+	imprimir(mat,ord);
+	transposta(mat,ord);
 
-   printf("\n\nA matriz:\n\n");
-   imprime(ord,mat);
-
-    printf("A transposta:\n\n");
-   transposta(ord,mat);
-
-
-    free(mat);
-    return 0;
+	free(mat);
+	EXIT_SUCCESS;
 }
